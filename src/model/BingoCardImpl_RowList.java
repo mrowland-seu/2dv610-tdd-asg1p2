@@ -24,7 +24,6 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
     public boolean isMarked(int row, int col) {
         if (row == FREE_SPACE_ROW && col == FREE_SPACE_COL)
             return true;
-        Integer entryAtRowCol = getEntry(row, col);
-        return integersMarked.contains(entryAtRowCol);
+        return integersMarked.contains(getEntry(row,col));
     }
 }
