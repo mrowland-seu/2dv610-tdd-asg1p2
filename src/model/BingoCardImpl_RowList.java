@@ -31,7 +31,7 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
     }
 
     public boolean isWinner() {
-        return isHorizontalWinner() || isVerticalWinner();
+        return isHorizontalWinner() || isVerticalWinner() || isDiagonalWinner();
     }
 
     private boolean isHorizontalWinner() {
@@ -60,5 +60,25 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
             if (isWinnerByColumn) break;
         }
         return isWinnerByColumn;
+    }
+
+    private boolean isDiagonalWinner() {
+        int row = 1;
+        int col = 1;
+        boolean isWinnerOnDiagonal = true;
+        while (row <= BINGO_CARD_WIDTH && col <= BINGO_CARD_WIDTH && isWinnerOnDiagonal) {
+            isWinnerOnDiagonal = isMarked(row, col);
+            row++; col++;
+        }
+        if (!isWinnerOnDiagonal) {
+            row = BINGO_CARD_WIDTH;
+            col = 1;
+            while (row >= 0 && col <= BINGO_CARD_WIDTH) {
+                isWinnerOnDiagonal = isMarked(row, col);
+                row--;
+                col++;
+            }
+        }
+        return isWinnerOnDiagonal;
     }
 }
