@@ -9,5 +9,7 @@ public interface BingoCard {
     public static final Integer FREE_SPACE = -1;
 
     public Integer getEntry(int row, int col);
+    public void mark(int value);
+    public boolean isMarked(int row, int col);
 
 }

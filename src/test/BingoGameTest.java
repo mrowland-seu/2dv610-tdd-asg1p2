@@ -45,6 +45,13 @@ public class BingoGameTest {
         assertFalse(retVal);
     }
 
+    @Test
+    public void bingoCardProperlyMarked() {
+        BingoCard bingoCard = createRowListBingoCard(getLowestPossibleBingoCardValueArray());
+        bingoCard.mark(1);
+        assertTrue(bingoCard.isMarked(1,1));
+    }
+
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);
     }

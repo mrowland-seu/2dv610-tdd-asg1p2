@@ -9,4 +9,8 @@ public abstract class BingoCardAbstract implements BingoCard {
     public BingoCardAbstract() {
         integersMarked = new HashSet<>();
     }
+
+    public void mark(int value) {
+        throw new RuntimeException("Not Implemented");
+    }
 }

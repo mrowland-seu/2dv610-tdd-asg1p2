@@ -20,4 +20,8 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
 
         return rowListList.get(row-1).get(col-1);
     }
+
+    public boolean isMarked(int row, int col) {
+        throw new RuntimeException("Not Implemented");
+    }
 }
