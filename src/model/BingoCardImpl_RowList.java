@@ -29,4 +29,8 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
         }
         return cardContainsNumber;
     }
+
+    public boolean isWinner() {
+        throw new RuntimeException("Not Implemented");
+    }
 }

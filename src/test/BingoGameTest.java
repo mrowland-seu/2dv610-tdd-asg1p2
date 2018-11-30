@@ -84,6 +84,17 @@ public class BingoGameTest {
         assertTrue(bingoCard.contains(values[0][4]));
     }
 
+    @Test
+    public void checkBingoCardIsHorizontalWinnerNoFreeSpace() {
+        Integer[][] values = getLowestPossibleBingoCardValueArray();
+        BingoCard bingoCard = createRowListBingoCard(values);
+
+        for(int i = 0; i < 5; i++) {
+            bingoCard.mark(values[0][i]);
+        }
+        assertTrue(bingoCard.isWinner());
+    }
+
 
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);
