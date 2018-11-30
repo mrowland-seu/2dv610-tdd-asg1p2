@@ -20,7 +20,7 @@ public class BingoGame_OnePlayer {
     }
 
     public boolean playGame() {
-        //marking & win determination functionality to be added
+        BingoCard bingoCard = generateBingoCard();
 
         return view.doesUserWantToContinue();
     }
