@@ -106,6 +106,25 @@ public class BingoGameTest {
         assertTrue(bingoCard.isWinner());
     }
 
+    @Test
+    public void checkBingoCardIsDiagonalWinner() {
+        Integer[][] values = getLowestPossibleBingoCardValueArray();
+        BingoCard bingoCardTLtoBR = createRowListBingoCard(values);
+
+        for(int i = 0; i < 5; i++) {
+            bingoCardTLtoBR.mark(values[i][i]);
+        }
+        assertTrue(bingoCardTLtoBR.isWinner());
+
+        BingoCard bingoCardTRtoBL = createRowListBingoCard(values);
+        int j = 4;
+        for(int i = 0; i < 5; i++) {
+            bingoCardTRtoBL.mark(values[j][i]);
+            j--;
+        }
+        assertTrue(bingoCardTRtoBL.isWinner());
+    }
+
 
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);
