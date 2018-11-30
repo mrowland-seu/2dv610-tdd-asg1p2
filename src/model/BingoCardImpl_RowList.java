@@ -15,7 +15,11 @@ public class BingoCardImpl_RowList implements BingoCard {
         }
     }
 
+    //precond: row and col must be valid 1-based values corresponding to a column or row of a bingo card, with maximum size = BINGO_CARD_WIDTH
     public Integer getEntry(int row, int col) {
+        assert (row >= 1 && row <= BINGO_CARD_WIDTH);
+        assert (col >= 1 && col <= BINGO_CARD_WIDTH);
+
         return rowListList.get(row-1).get(col-1);
     }
 }
