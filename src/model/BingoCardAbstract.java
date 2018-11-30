@@ -11,6 +11,6 @@ public abstract class BingoCardAbstract implements BingoCard {
     }
 
     public void mark(int value) {
-        throw new RuntimeException("Not Implemented");
+        integersMarked.add(value);
     }
 }
