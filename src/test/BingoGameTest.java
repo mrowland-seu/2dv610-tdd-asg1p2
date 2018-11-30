@@ -202,7 +202,7 @@ public class BingoGameTest {
     @Test
     public void checkDisplayWinMessageBehaviour() {
         spyView.displayWinMessage(1,5);
-        verify(spyView).displayOutput("You guessed it would take 5 turns but it actually took 1 turns.");
+        verify(spyView).displayOutput("You guessed it would take 1 turns but it actually took 5 turns.");
         spyView.displayWinMessage(1,1);
         verify(spyView).displayOutput("You guessed the correct number of turns to reach bingo!");
     }
