@@ -176,6 +176,12 @@ public class BingoGameTest {
         verify(mockedView, times(1)).promptUserForNumberOfGuessesUntilBingo();
     }
 
+    @Test
+    public void gameMarksNumberOnCardCorrectly() {
+        BingoCard card = createRowListBingoCard(getLowestPossibleBingoCardValueArray());
+        spyBingoGame.markNextNumber(card);
+        assertEquals(1, card.getIntegersMarked().size());
+    }
 
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);

@@ -22,6 +22,8 @@ public class BingoGame_OnePlayer {
         BingoCard bingoCard = generateBingoCard();
         int userGuesses = view.promptUserForNumberOfGuessesUntilBingo();
 
+
+
         return view.doesUserWantToContinue();
     }
 
@@ -41,5 +43,9 @@ public class BingoGame_OnePlayer {
             }
         }
         return new BingoCardImpl_RowList(values);
+    }
+
+    public void markNextNumber(BingoCard card) {
+        throw new RuntimeException();
     }
 }

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.List;
+import java.util.Set;
 
 public interface BingoCard {
     public static final int BINGO_CARD_WIDTH = 5;
@@ -17,5 +18,6 @@ public interface BingoCard {
     public boolean isWinner();
 
     public List<List<Integer>> getRowInformation();
+    public Set<Integer> getIntegersMarked();
 
 }

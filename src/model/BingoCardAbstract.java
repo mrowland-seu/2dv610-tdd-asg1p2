@@ -19,4 +19,6 @@ public abstract class BingoCardAbstract implements BingoCard {
             return true;
         return integersMarked.contains(getEntry(row,col));
     }
+
+    public Set<Integer> getIntegersMarked() {throw new RuntimeException("not Implemented");}
 }
