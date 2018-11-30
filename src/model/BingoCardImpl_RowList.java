@@ -1,12 +1,18 @@
 package model;
 
-import java.util.List;
+import java.util.*;
 
 public class BingoCardImpl_RowList implements BingoCard {
     private List<List<Integer>> rowListList;
+    private Set<Integer> integersMarked;
 
     public BingoCardImpl_RowList(Integer[][] cardValues) {
-        throw new RuntimeException("Not Implemented");
+        integersMarked = new HashSet<>();
+
+        rowListList = new ArrayList<>();
+        for (Integer[] row : cardValues) {
+            rowListList.add(Arrays.asList(row));
+        }
     }
 
     public Integer getValueAtLocation(int row, int col) {
