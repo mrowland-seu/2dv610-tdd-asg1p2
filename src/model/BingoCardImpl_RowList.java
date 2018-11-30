@@ -36,13 +36,16 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
 
     private boolean isHorizontalWinner() {
         boolean isWinnerByRow = true;
+        //cycles through each row
         for (int row = 1; row <= BINGO_CARD_WIDTH; row++) {
             int column = 1;
             isWinnerByRow = true;
+            //checks 1 row, will break if a single spot in the row is not marked
             while (column <= BINGO_CARD_WIDTH && isWinnerByRow){
                 isWinnerByRow = isMarked(row, column);
                 column++;
             }
+            //if a winner was found break for loop and return
             if (isWinnerByRow) break;
         }
         return isWinnerByRow;
@@ -50,13 +53,16 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
 
     private boolean isVerticalWinner() {
         boolean isWinnerByColumn = true;
+        //cycles through each col
         for (int column = 1; column <= BINGO_CARD_WIDTH; column++) {
             isWinnerByColumn = true;
             int row = 1;
+            //checks 1 col, will break if a single spot in the col is not marked
             while (row <= BINGO_CARD_WIDTH && isWinnerByColumn) {
                 isWinnerByColumn = isMarked(row, column);
                 row++;
             }
+            //if a winner was found break for loop and return
             if (isWinnerByColumn) break;
         }
         return isWinnerByColumn;
