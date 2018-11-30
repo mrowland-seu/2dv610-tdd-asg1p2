@@ -22,6 +22,13 @@ public class BingoGameTest {
         BingoCard bingoCard = createRowListBingoCard(getLowestPossibleBingoCardValueArray());
     }
 
+    @Test
+    public void properFreeSpaceLocationOfRowBasedBingoCard() {
+        BingoCard bingoCard = createRowListBingoCard(getLowestPossibleBingoCardValueArray());
+        //getValueAtLocation requires 1-based row and column numbers
+        assertEquals(BingoCard.FREE_SPACE, bingoCard.getValueAtLocation(3, 3));
+    }
+
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);
     }
