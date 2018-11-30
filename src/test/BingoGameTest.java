@@ -157,10 +157,11 @@ public class BingoGameTest {
         BingoCard card = spyBingoGame.generateBingoCard();
         for (int i = 0; i < 5; i++) {
             for (int k = 0; k<5; k++) {
-                int numToVerify = card.getEntry(i+1,k+1);
+                int numToVerify = card.getEntry(k+1,i+1);
                 assert (numToVerify > i*15 && numToVerify <= (i+1)*15);
             }
         }
+        view.printBingoCard(card);
     }
 
 
