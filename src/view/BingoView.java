@@ -18,10 +18,7 @@ public class BingoView {
         while(!userChoice.equals("y") && !userChoice.equals("n")) {
             userChoice = acceptUserInput();
         }
-        if (userChoice.equals("y")) {
-            return true;
-        }
-        return false;
+        return userChoice.equals("y");
     }
 
     //can't reach full coverage on this method, since all it does is uses a scanner and i mock its return value every time

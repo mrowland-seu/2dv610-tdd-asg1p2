@@ -4,20 +4,20 @@ import java.util.List;
 import java.util.Set;
 
 public interface BingoCard {
-    public static final int BINGO_CARD_WIDTH = 5;
-    static final int MINIMUM_BINGO_CARD_VALUE = 1;
-    static final int MAXIMUM_BINGO_CARD_VALUE = 75;
-    public static final Integer FREE_SPACE = -1;
-    static final int FREE_SPACE_ROW = 3;
-    static final int FREE_SPACE_COL = 3;
+    int BINGO_CARD_WIDTH = 5;
+    int MINIMUM_BINGO_CARD_VALUE = 1;
+    int MAXIMUM_BINGO_CARD_VALUE = 75;
+    Integer FREE_SPACE = -1;
+    int FREE_SPACE_ROW = 3;
+    int FREE_SPACE_COL = 3;
 
-    public Integer getEntry(int row, int col);
-    public void mark(int value);
-    public boolean isMarked(int row, int col);
-    public boolean contains(int value);
-    public boolean isWinner();
+    Integer getEntry(int row, int col);
+    void mark(int value);
+    boolean isMarked(int row, int col);
+    boolean contains(int value);
+    boolean isWinner();
 
-    public List<List<Integer>> getRowInformation();
-    public Set<Integer> getIntegersMarked();
+    List<List<Integer>> getRowInformation();
+    Set<Integer> getIntegersMarked();
 
 }
