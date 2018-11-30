@@ -31,6 +31,16 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
     }
 
     public boolean isWinner() {
-        throw new RuntimeException("Not Implemented");
+        boolean isWinner = true;
+        for (int row = 1; row <= BINGO_CARD_WIDTH; row++) {
+            int column = 1;
+            isWinner = true;
+            while (column <= BINGO_CARD_WIDTH && isWinner){
+                isWinner = isMarked(row, column);
+                column++;
+            }
+            if (isWinner) break;
+        }
+        return isWinner;
     }
 }
