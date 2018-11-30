@@ -10,7 +10,11 @@ public class BingoView {
     }
 
     public boolean doesUserWantToContinue() {
-        throw new RuntimeException("Not Implemented");
+        String userChoice = acceptUserInput();
+        if (userChoice.equals("y")) {
+            return true;
+        }
+        return false;
     }
 
     public String acceptUserInput() {

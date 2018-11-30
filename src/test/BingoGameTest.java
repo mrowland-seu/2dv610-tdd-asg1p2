@@ -15,12 +15,14 @@ public class BingoGameTest {
     private BingoGame_OnePlayer controller;
 
     private BingoView mockedView;
+    private BingoView spyView;
     private BingoGame_OnePlayer spyBingoGame;
 
     @Before
     public void initTests() {
         view = new BingoView();
         mockedView = mock(BingoView.class);
+        spyView = spy(view);
         controller = new BingoGame_OnePlayer(mockedView);
         spyBingoGame = spy(controller);
     }
@@ -38,7 +40,7 @@ public class BingoGameTest {
     }
 
     @Test
-    public void returnFalseOnUserDecideToExit() {
+    public void returnFalseOnUserDecideToExitNoInput() {
         when(mockedView.doesUserWantToContinue()).thenReturn(false);
         boolean retVal = controller.playGame();
         verify(mockedView).doesUserWantToContinue();
@@ -55,12 +57,12 @@ public class BingoGameTest {
     }
 
     @Test
-    public void viewSuccessfullyPromptsUserForQuitOrNoQuit() {
-        when(mockedView.acceptUserInput()).thenReturn("y");
-        boolean rv = mockedView.doesUserWantToContinue();
+    public void correctInputAllowsUserToConfirmOrDenyExit() {
+        doReturn("y").when(spyView).acceptUserInput();
+        boolean rv = spyView.doesUserWantToContinue();
         assertTrue(rv);
-        when(mockedView.acceptUserInput()).thenReturn("n");
-        rv = mockedView.doesUserWantToContinue();
+        doReturn("n").when(spyView).acceptUserInput();
+        rv = spyView.doesUserWantToContinue();
         assertFalse(rv);
     }
 
