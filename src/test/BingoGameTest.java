@@ -4,17 +4,25 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import static org.mockito.Mockito.*;
+
 import controller.BingoGame_OnePlayer;
 import model.*;
 import view.BingoView;
 
 public class BingoGameTest {
+    private BingoView view;
+    private BingoGame_OnePlayer controller;
 
-    BingoView view;
-    BingoGame_OnePlayer controller;
+    private BingoView mockedView;
+    private BingoGame_OnePlayer spyBingoGame;
 
     @Before
     public void initTests() {
+        view = new BingoView();
+        mockedView = mock(BingoView.class);
+        controller = new BingoGame_OnePlayer(mockedView);
+        spyBingoGame = spy(controller);
     }
 
     @Test
@@ -26,7 +34,15 @@ public class BingoGameTest {
     public void properFreeSpaceLocationOfRowBasedBingoCard() {
         BingoCard bingoCard = createRowListBingoCard(getLowestPossibleBingoCardValueArray());
         //getValueAtLocation requires 1-based row and column numbers
-        assertEquals(BingoCard.FREE_SPACE, bingoCard.getValueAtLocation(3, 3));
+        assertEquals(BingoCard.FREE_SPACE, bingoCard.getEntry(3, 3));
+    }
+
+    @Test
+    public void returnFalseOnUserDecideToExit() {
+        when(mockedView.doesUserWantToContinue()).thenReturn(false);
+        boolean retVal = controller.playGame();
+        verify(mockedView).doesUserWantToContinue();
+        assertFalse(retVal);
     }
 
     private BingoCard createRowListBingoCard(Integer[][] values) {

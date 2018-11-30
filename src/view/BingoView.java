@@ -8,4 +8,8 @@ public class BingoView {
     public BingoView() {
 
     }
+
+    public boolean doesUserWantToContinue() {
+        throw new RuntimeException("Not Implemented");
+    }
 }
