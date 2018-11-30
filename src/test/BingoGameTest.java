@@ -199,6 +199,14 @@ public class BingoGameTest {
         verify(mockedView).displayWinMessage(5, 1);
     }
 
+    @Test
+    public void checkDisplayWinMessageBehaviour() {
+        spyView.displayWinMessage(1,5);
+        verify(spyView).displayOutput("You guessed it would take 5 turns but it actually took 1 turns.");
+        spyView.displayWinMessage(1,1);
+        verify(spyView).displayOutput("You guessed the correct number of turns to reach bingo!");
+    }
+
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);
     }

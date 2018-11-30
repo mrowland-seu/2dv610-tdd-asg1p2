@@ -57,11 +57,6 @@ public class BingoView {
     }
 
     public void displayWinMessage(int guess, int actual) {
-        if (guess == actual) {
-            displayOutput("You guessed the correct number of turns to reach bingo!");
-        } else {
-            displayOutput("You guessed it would take " + guess + " turns but it actually took " + actual + " turns.");
-        }
     }
 
     public int promptUserForNumberOfGuessesUntilBingo() {
