@@ -49,6 +49,10 @@ public class BingoView {
         System.out.println(output);
     }
 
+    public void displayWinMessage(int guesses) {
+        displayOutput("You Won in " + guesses + " guesses!");
+    }
+
     public int promptUserForNumberOfGuessesUntilBingo() {
         displayOutput("Enter the number of guesses you think it will take to reach bingo: ");
         return Integer.getInteger(acceptUserInput());

@@ -25,6 +25,7 @@ public class BingoGame_OnePlayer {
 
 
 
+
         return view.doesUserWantToContinue();
     }
 
@@ -51,5 +52,9 @@ public class BingoGame_OnePlayer {
         while (size == card.getIntegersMarked().size()) {
             card.mark(random.nextInt(75)+1);
         }
+    }
+
+    public boolean checkWinner() {
+        return bingoCard.isWinner();
     }
 }
