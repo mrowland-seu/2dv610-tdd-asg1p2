@@ -191,6 +191,14 @@ public class BingoGameTest {
         verify(mockedView).displayWinMessage(1, 1);
     }
 
+    @Test
+    public void checkWinBehaviorInGameIncorrectGuess() {
+        when(mockedView.promptUserForNumberOfGuessesUntilBingo()).thenReturn(5);
+        doReturn(true).when(spyBingoGame).checkWinner();
+        spyBingoGame.playGame();
+        verify(mockedView).displayWinMessage(5, 1);
+    }
+
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);
     }
