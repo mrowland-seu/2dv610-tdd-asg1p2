@@ -90,7 +90,7 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
     }
 
     @Override
-    public Iterable<List<Integer>> getRowInformation() {
+    public List<List<Integer>> getRowInformation() {
         return rowListList;
     }
 }

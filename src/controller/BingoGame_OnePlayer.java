@@ -19,4 +19,7 @@ public class BingoGame_OnePlayer {
     }
 
     //generate card funcitonality to be added
+    public BingoCard generateBingoCard() {
+        throw new RuntimeException("not implemented");
+    }
 }

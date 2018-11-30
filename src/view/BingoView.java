@@ -29,7 +29,7 @@ public class BingoView {
     }
 
     public void printBingoCard(BingoCard bingoCard) {
-        Iterable<List<Integer>> rowInformation = bingoCard.getRowInformation();
+        List<List<Integer>> rowInformation = bingoCard.getRowInformation();
 
         String retVal = "";
         for (List<Integer> row : rowInformation) {

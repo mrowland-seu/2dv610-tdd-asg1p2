@@ -11,6 +11,9 @@ import controller.BingoGame_OnePlayer;
 import model.*;
 import view.BingoView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BingoGameTest {
     private BingoView view;
     private BingoGame_OnePlayer controller;
@@ -147,6 +150,17 @@ public class BingoGameTest {
                 "4 19 33 48 64 \n" +
                 "5 20 35 50 65 \n";
         verify(spyView).displayOutput(properCardString);
+    }
+
+    @Test
+    public void testCreateNewBingoCard() {
+        BingoCard card = spyBingoGame.generateBingoCard();
+        for (int i = 0; i < 5; i++) {
+            for (int k = 0; k<5; k++) {
+                int numToVerify = card.getEntry(i+1,k+1);
+                assert (numToVerify > i*15 && numToVerify <= (i+1)*15);
+            }
+        }
     }
 
 

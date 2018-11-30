@@ -16,6 +16,6 @@ public interface BingoCard {
     public boolean contains(int value);
     public boolean isWinner();
 
-    public Iterable<List<Integer>> getRowInformation();
+    public List<List<Integer>> getRowInformation();
 
 }
