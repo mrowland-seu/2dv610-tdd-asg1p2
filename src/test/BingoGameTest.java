@@ -173,7 +173,7 @@ public class BingoGameTest {
     @Test
     public void userAskedForNumberOfGuessesUntilBingo() {
         spyBingoGame.playGame();
-        verify(spyView, times(1)).promptUserForNumberOfGuessesUntilBingo();
+        verify(mockedView, times(1)).promptUserForNumberOfGuessesUntilBingo();
     }
 
 

@@ -20,7 +20,7 @@ public class BingoGame_OnePlayer {
 
     public boolean playGame() {
         BingoCard bingoCard = generateBingoCard();
-
+        int userGuesses = view.promptUserForNumberOfGuessesUntilBingo();
 
         return view.doesUserWantToContinue();
     }

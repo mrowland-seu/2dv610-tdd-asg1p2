@@ -50,6 +50,7 @@ public class BingoView {
     }
 
     public int promptUserForNumberOfGuessesUntilBingo() {
-        throw new RuntimeException("Not Implemented");
+        displayOutput("Enter the number of guesses you think it will take to reach bingo: ");
+        return Integer.getInteger(acceptUserInput());
     }
 }
