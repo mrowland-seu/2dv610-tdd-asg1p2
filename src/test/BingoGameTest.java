@@ -85,7 +85,7 @@ public class BingoGameTest {
     }
 
     @Test
-    public void checkBingoCardIsHorizontalWinnerNoFreeSpace() {
+    public void checkWinningBingoCardContainsHorizontalWinnerNoFreeSpace() {
         Integer[][] values = getLowestPossibleBingoCardValueArray();
         BingoCard bingoCard = createRowListBingoCard(values);
 
@@ -96,7 +96,7 @@ public class BingoGameTest {
     }
 
     @Test
-    public void checkBingoCardIsVerticalWinnerNoFreeSpace() {
+    public void checkWinningBingoCardContainsVerticalWinnerNoFreeSpace() {
         Integer[][] values = getLowestPossibleBingoCardValueArray();
         BingoCard bingoCard = createRowListBingoCard(values);
 
@@ -107,7 +107,7 @@ public class BingoGameTest {
     }
 
     @Test
-    public void checkBingoCardIsDiagonalWinner() {
+    public void checkWinningBingoCardContainsDiagonalWinner() {
         Integer[][] values = getLowestPossibleBingoCardValueArray();
         BingoCard bingoCardTLtoBR = createRowListBingoCard(values);
 
