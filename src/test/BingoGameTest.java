@@ -185,9 +185,9 @@ public class BingoGameTest {
 
     @Test
     public void checkWinBehaviorInGameCorrectGuess() {
-        spyBingoGame.playGame();
         when(mockedView.promptUserForNumberOfGuessesUntilBingo()).thenReturn(1);
         doReturn(true).when(spyBingoGame).checkWinner();
+        spyBingoGame.playGame();
         verify(mockedView).displayWinMessage(1, 1);
     }
 
