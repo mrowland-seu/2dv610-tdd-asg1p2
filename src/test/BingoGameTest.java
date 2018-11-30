@@ -46,9 +46,10 @@ public class BingoGameTest {
     }
 
     @Test
-    public void bingoCardProperlyMarked() {
-        BingoCard bingoCard = createRowListBingoCard(getLowestPossibleBingoCardValueArray());
-        bingoCard.mark(1);
+    public void bingoCardMarkedRow1Col1() {
+        Integer[][] values = getLowestPossibleBingoCardValueArray();
+        BingoCard bingoCard = createRowListBingoCard(values);
+        bingoCard.mark(values[0][0]);
         assertTrue(bingoCard.isMarked(1,1));
     }
 
