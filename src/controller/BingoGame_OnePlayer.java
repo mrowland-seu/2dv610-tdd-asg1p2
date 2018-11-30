@@ -20,11 +20,20 @@ public class BingoGame_OnePlayer {
     }
 
     public boolean playGame() {
+        //view.printWelcome();
         bingoCard = generateBingoCard();
+        view.printBingoCard(bingoCard);
         int userGuesses = view.promptUserForNumberOfGuessesUntilBingo();
+        int counter = 0;
 
+        boolean isWinner = false;
+        while (!isWinner) {
+            markNextNumber(bingoCard);
+            counter++;
+            isWinner = checkWinner();
+        }
 
-
+        view.displayWinMessage(userGuesses, counter);
 
         return view.doesUserWantToContinue();
     }
