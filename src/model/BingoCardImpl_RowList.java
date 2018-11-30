@@ -28,6 +28,11 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
     }
 
     public boolean contains(int value) {
-        throw new RuntimeException("Not Implemented");
+        boolean cardContainsNumber = false;
+        for (List<Integer> currentRow : rowListList) {
+            if (currentRow.contains(value))
+                cardContainsNumber = true;
+        }
+        return cardContainsNumber;
     }
 }
