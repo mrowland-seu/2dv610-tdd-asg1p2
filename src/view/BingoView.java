@@ -20,6 +20,7 @@ public class BingoView {
         return false;
     }
 
+    //can't reach full coverage on this method, since all it does is uses a scanner and i mock its return value every time
     public String acceptUserInput() {
         return in.nextLine();
     }
