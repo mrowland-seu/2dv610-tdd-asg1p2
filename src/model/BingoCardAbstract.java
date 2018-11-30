@@ -13,4 +13,10 @@ public abstract class BingoCardAbstract implements BingoCard {
     public void mark(int value) {
         integersMarked.add(value);
     }
+
+    public boolean isMarked(int row, int col) {
+        if (row == FREE_SPACE_ROW && col == FREE_SPACE_COL)
+            return true;
+        return integersMarked.contains(getEntry(row,col));
+    }
 }

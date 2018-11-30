@@ -21,13 +21,7 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
         return rowListList.get(row-1).get(col-1);
     }
 
-    public boolean isMarked(int row, int col) {
-        if (row == FREE_SPACE_ROW && col == FREE_SPACE_COL)
-            return true;
-        return integersMarked.contains(getEntry(row,col));
-    }
-
-    public boolean contains(int value) {
+     public boolean contains(int value) {
         boolean cardContainsNumber = false;
         for (List<Integer> currentRow : rowListList) {
             if (currentRow.contains(value))
