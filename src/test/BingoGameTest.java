@@ -69,7 +69,7 @@ public class BingoGameTest {
 
     @Test
     public void refuseToProceedWithoutCorrectInputOnDoesUserWantToContinue() {
-        doReturn("y").doReturn("e").doReturn("1").when(spyView).acceptUserInput();
+        doReturn("1").doReturn("e").doReturn("y").when(spyView).acceptUserInput();
         boolean rv = spyView.doesUserWantToContinue();
         verify(spyView, times(3)).acceptUserInput();
         assertTrue(rv);

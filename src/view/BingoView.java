@@ -10,7 +10,10 @@ public class BingoView {
     }
 
     public boolean doesUserWantToContinue() {
-        String userChoice = acceptUserInput();
+        String userChoice = "";
+        while(!userChoice.equals("y") && !userChoice.equals("n")) {
+            userChoice = acceptUserInput();
+        }
         if (userChoice.equals("y")) {
             return true;
         }
