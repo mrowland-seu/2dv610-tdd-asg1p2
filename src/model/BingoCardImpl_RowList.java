@@ -31,6 +31,10 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
     }
 
     public boolean isWinner() {
+        return isHorizontalWinner();
+    }
+
+    private boolean isHorizontalWinner() {
         boolean isWinner = true;
         for (int row = 1; row <= BINGO_CARD_WIDTH; row++) {
             int column = 1;
