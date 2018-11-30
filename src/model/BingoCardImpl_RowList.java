@@ -15,7 +15,7 @@ public class BingoCardImpl_RowList implements BingoCard {
         }
     }
 
-    public Integer getValueAtLocation(int row, int col) {
+    public Integer getEntry(int row, int col) {
         return rowListList.get(row-1).get(col-1);
     }
 }

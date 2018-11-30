@@ -8,6 +8,6 @@ public interface BingoCard {
     static final int MAXIMUM_BINGO_CARD_VALUE = 75;
     public static final Integer FREE_SPACE = -1;
 
-    public Integer getValueAtLocation(int row, int col);
+    public Integer getEntry(int row, int col);
 
 }
