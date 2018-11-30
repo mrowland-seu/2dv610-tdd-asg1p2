@@ -26,4 +26,8 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
             return true;
         return integersMarked.contains(getEntry(row,col));
     }
+
+    public boolean contains(int value) {
+        throw new RuntimeException("Not Implemented");
+    }
 }

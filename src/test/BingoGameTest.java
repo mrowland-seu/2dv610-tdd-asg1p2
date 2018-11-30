@@ -75,6 +75,15 @@ public class BingoGameTest {
         assertTrue(rv);
     }
 
+    @Test
+    public void checkIfBingoCardContainsValuesGiventoContains() {
+        Integer[][] values = getLowestPossibleBingoCardValueArray();
+        BingoCard bingoCard = createRowListBingoCard(values);
+        assertTrue(bingoCard.contains(values[3][1]));
+        assertTrue(bingoCard.contains(values[4][0]));
+        assertTrue(bingoCard.contains(values[0][4]));
+    }
+
 
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);

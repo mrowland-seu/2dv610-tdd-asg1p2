@@ -13,5 +13,6 @@ public interface BingoCard {
     public Integer getEntry(int row, int col);
     public void mark(int value);
     public boolean isMarked(int row, int col);
+    public boolean contains(int value);
 
 }
