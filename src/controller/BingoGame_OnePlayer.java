@@ -25,7 +25,6 @@ public class BingoGame_OnePlayer {
         return view.doesUserWantToContinue();
     }
 
-    //generate card funcitonality to be added
     public BingoCard generateBingoCard() {
         Integer[][] values = new Integer[BingoCard.BINGO_CARD_WIDTH][BingoCard.BINGO_CARD_WIDTH];
         for (int i = 0; i < BingoCard.BINGO_CARD_WIDTH; i++) {

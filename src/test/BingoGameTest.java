@@ -164,6 +164,12 @@ public class BingoGameTest {
         view.printBingoCard(card);
     }
 
+    @Test
+    public void playGameCreatesNewBingoCardOnRun() {
+        spyBingoGame.playGame();
+        verify(spyBingoGame, times(1)).generateBingoCard();
+    }
+
 
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);
