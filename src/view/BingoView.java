@@ -2,6 +2,7 @@ package view;
 
 import model.BingoCard;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class BingoView {
@@ -28,6 +29,23 @@ public class BingoView {
     }
 
     public void printBingoCard(BingoCard bingoCard) {
-        throw new RuntimeException("Not Implemented");
+        Iterable<List<Integer>> rowInformation = bingoCard.getRowInformation();
+
+        String retVal = "";
+        for (List<Integer> row : rowInformation) {
+            for (Integer value : row) {
+                if (value == -1) {
+                    retVal += "FS ";
+                } else {
+                    retVal += value + " ";
+                }
+            }
+            retVal += "\n";
+        }
+        displayOutput(retVal);
+    }
+
+    public void displayOutput(String output) {
+        System.out.println(output);
     }
 }

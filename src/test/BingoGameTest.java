@@ -139,7 +139,14 @@ public class BingoGameTest {
         Integer[][] values = getLowestPossibleBingoCardValueArray();
         BingoCard bingoCard = createRowListBingoCard(values);
 
-        view.printBingoCard(bingoCard);
+        spyView.printBingoCard(bingoCard);
+        String properCardString =
+                "1 16 31 46 61 \n" +
+                "2 17 31 47 62 \n" +
+                "3 18 FS 48 63 \n" +
+                "4 19 33 48 64 \n" +
+                "5 20 35 50 65 \n";
+        verify(spyView).displayOutput(properCardString);
     }
 
 
