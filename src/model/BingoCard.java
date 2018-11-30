@@ -1,6 +1,6 @@
 package model;
 
-import java.util.Set;
+import java.util.List;
 
 public interface BingoCard {
     public static final int BINGO_CARD_WIDTH = 5;
@@ -15,5 +15,7 @@ public interface BingoCard {
     public boolean isMarked(int row, int col);
     public boolean contains(int value);
     public boolean isWinner();
+
+    public Iterable<List<Integer>> getRowInformation();
 
 }

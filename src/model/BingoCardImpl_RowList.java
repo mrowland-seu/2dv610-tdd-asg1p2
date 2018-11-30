@@ -88,4 +88,9 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
         }
         return isWinnerOnDiagonal;
     }
+
+    @Override
+    public Iterable<List<Integer>> getRowInformation() {
+        return rowListList;
+    }
 }

@@ -1,5 +1,7 @@
 package view;
 
+import model.BingoCard;
+
 import java.util.Scanner;
 
 public class BingoView {
@@ -23,5 +25,9 @@ public class BingoView {
     //can't reach full coverage on this method, since all it does is uses a scanner and i mock its return value every time
     public String acceptUserInput() {
         return in.nextLine();
+    }
+
+    public void printBingoCard(BingoCard bingoCard) {
+        throw new RuntimeException("Not Implemented");
     }
 }

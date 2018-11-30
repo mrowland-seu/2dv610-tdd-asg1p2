@@ -134,6 +134,14 @@ public class BingoGameTest {
         assertFalse(bingoCard.isWinner());
     }
 
+    @Test
+    public void testPrintBingoCard() {
+        Integer[][] values = getLowestPossibleBingoCardValueArray();
+        BingoCard bingoCard = createRowListBingoCard(values);
+
+        view.printBingoCard(bingoCard);
+    }
+
 
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);
