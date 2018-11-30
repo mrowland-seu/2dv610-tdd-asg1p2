@@ -12,6 +12,7 @@ import view.BingoView;
 public class BingoGame_OnePlayer {
     private BingoView view;
     private Random random;
+    private BingoCard bingoCard;
 
     public BingoGame_OnePlayer(BingoView view) {
         this.view = view;
@@ -19,7 +20,7 @@ public class BingoGame_OnePlayer {
     }
 
     public boolean playGame() {
-        BingoCard bingoCard = generateBingoCard();
+        bingoCard = generateBingoCard();
         int userGuesses = view.promptUserForNumberOfGuessesUntilBingo();
 
 
