@@ -1,5 +1,6 @@
 package test;
 
+import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -57,13 +58,21 @@ public class BingoGameTest {
     }
 
     @Test
-    public void correctInputAllowsUserToConfirmOrDenyExit() {
+    public void correctInputAllowsUserToConfirmOrDenyExitForDoesUserWantToContinue() {
         doReturn("y").when(spyView).acceptUserInput();
         boolean rv = spyView.doesUserWantToContinue();
         assertTrue(rv);
         doReturn("n").when(spyView).acceptUserInput();
         rv = spyView.doesUserWantToContinue();
         assertFalse(rv);
+    }
+
+    @Test
+    public void refuseToProceedWithoutCorrectInputOnDoesUserWantToContinue() {
+        doReturn("y").doReturn("e").doReturn("1").when(spyView).acceptUserInput();
+        boolean rv = spyView.doesUserWantToContinue();
+        verify(spyView, times(3)).acceptUserInput();
+        assertTrue(rv);
     }
 
 
