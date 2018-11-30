@@ -46,6 +46,9 @@ public class BingoGame_OnePlayer {
     }
 
     public void markNextNumber(BingoCard card) {
-        throw new RuntimeException();
+        int size = card.getIntegersMarked().size();
+        while (size == card.getIntegersMarked().size()) {
+            card.mark(random.nextInt(75)+1);
+        }
     }
 }
