@@ -11,6 +11,9 @@ public class BingoGame_OnePlayer {
     }
 
     public boolean playGame() {
-        throw new RuntimeException("Not Implemented");
+        if (!view.doesUserWantToContinue()) {
+            return false;
+        }
+        return true;
     }
 }
