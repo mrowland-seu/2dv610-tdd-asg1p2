@@ -71,9 +71,10 @@ public class BingoCardImpl_RowList extends BingoCardAbstract implements BingoCar
             row++; col++;
         }
         if (!isWinnerOnDiagonal) {
+            isWinnerOnDiagonal = true;
             row = BINGO_CARD_WIDTH;
             col = 1;
-            while (row >= 0 && col <= BINGO_CARD_WIDTH) {
+            while (row >= 0 && col <= BINGO_CARD_WIDTH && isWinnerOnDiagonal) {
                 isWinnerOnDiagonal = isMarked(row, col);
                 row--;
                 col++;
