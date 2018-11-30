@@ -170,6 +170,12 @@ public class BingoGameTest {
         verify(spyBingoGame, times(1)).generateBingoCard();
     }
 
+    @Test
+    public void userAskedForNumberOfGuessesUntilBingo() {
+        spyBingoGame.playGame();
+        verify(spyView, times(1)).promptUserForNumberOfGuessesUntilBingo();
+    }
+
 
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);

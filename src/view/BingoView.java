@@ -48,4 +48,8 @@ public class BingoView {
     public void displayOutput(String output) {
         System.out.println(output);
     }
+
+    public int promptUserForNumberOfGuessesUntilBingo() {
+        throw new RuntimeException("Not Implemented");
+    }
 }
