@@ -54,6 +54,16 @@ public class BingoGameTest {
         assertTrue(bingoCard.isMarked(3,3));
     }
 
+    @Test
+    public void viewSuccessfullyPromptsUserForQuitOrNoQuit() {
+        when(mockedView.acceptUserInput()).thenReturn("y");
+        boolean rv = mockedView.doesUserWantToContinue();
+        assertTrue(rv);
+        when(mockedView.acceptUserInput()).thenReturn("n");
+        rv = mockedView.doesUserWantToContinue();
+        assertFalse(rv);
+    }
+
 
     private BingoCard createRowListBingoCard(Integer[][] values) {
         return new BingoCardImpl_RowList(values);
