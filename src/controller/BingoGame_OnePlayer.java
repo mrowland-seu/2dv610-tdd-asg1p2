@@ -11,9 +11,6 @@ public class BingoGame_OnePlayer {
     }
 
     public boolean playGame() {
-        if (!view.doesUserWantToContinue()) {
-            return false;
-        }
-        return true;
+        return view.doesUserWantToContinue();
     }
 }
